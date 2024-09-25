@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="sign_In_Section">
+        <div class="signIn-left-section">
+            <div class="img">
+              <p class="heading-para">Shopify</p>
+              <img src="./public/img/SigninChair.jpg" alt="SigninChair">
+            </div>
+          </div>
+
+          <div class="signIn-right-section">
+            <div class="signUp-right-section-content">
+              <p class="Sign-In-Text">Sign up</p>
+              <p>Already have an account? <a href="index.html">Sign In</a></p>
+              <form action="" class="SingUpform form">
+                <label for="name">Your name</label>
+                <input type="text" name="name" id="name">
+                <p class="errorMessageName">Name must be more than 2 characters.</p>
+                <p class="errorMessageNameRequired">Name is a required field.</p>
+
+
+                <label for="Username">Username</label>
+                <input type="text" name="Username" id="Username">
+                <p class="errorMessageUserName">User Name has invalid data</p>
+                <p class="errorMessageUsernameRequired">User Name is a required field.</p>
+
+
+                <label for="Email">Email Address</label>
+                <input type="email" name="Email" id="Email">
+                <p class="errorMessageEmail">Enter a valid mail</p>
+                <p class="errorMessageEmaiRequired">Email is a required field.</p>
+
+
+                <label for="Password">Password</label>
+                <input type="password" name="Password" id="Password">
+                <p class="errorMessagePsd">Password should be atleast 6 characters in length</p>
+                <p class="errorMessagePsdRequired">Password is a required field.</p>
+
+
+                <div>
+                  <input type="checkbox" name="showPswd" id="showPswd"> Show Password
+                </div>
+                <div class="RememberME-ForgotPsd">
+                  <div class="rememberme">
+                    <input type="checkbox" name="RememberMe" id="RememberMe">
+                    <label for="RememberMe">I agree with <span>Privacy Policy</span> and <span>Terms of Use</span></label>
+                  </div>
+                  
+                </div>
+                <button class="SignUpButton">Sign Up</button>
+              </form>
+            </div>
+          </div>
+    </section>
+    <script type="module" src="Sign_Up.js"></script>
+</body>
+</html>
