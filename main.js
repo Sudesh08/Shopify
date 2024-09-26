@@ -25,6 +25,7 @@ const Username=document.getElementById("Username")
 // const Password =document.getElementById("Password")
 const showPassword=document.getElementById("Password")
 const PopUp=document.querySelector(".PopUp")
+let isPassword = true;
 
 let Myname=""
 let MyPassword=""
@@ -47,6 +48,11 @@ showPassword.addEventListener("input",(event)=>{
 })
 
 
+// isPassword.setTimeout(() => {
+//     isPassword=true
+// }, 3000);
+
+
 signInButton.addEventListener("click",(e)=>{
 
     e.preventDefault()
@@ -63,22 +69,33 @@ signInButton.addEventListener("click",(e)=>{
             
             const user = userCredential.user;
             console.log("User signed in:", user);
-            window.location.href = "HomePage/Home.html"; // Redirect to homepage
+            // window.location.href = "HomePage/Home.html"; // Redirect to homepage
         })
         .catch((error) => {
-            if (error.code === "auth/wrong-password") {
-                alert("Incorrect password.");
-            } else if (error.code === "auth/user-not-found") {
-                alert("No user found with this email.");
-            } 
+            PopUp.classList.add("show");
+            setTimeout(() => {
+                PopUp.classList.remove("show");
+                Username.value=""
+                showPassword.value=""
+                Myname=""
+                MyPassword=""
+            }, 3000);
+
+            // if (error.code === "auth/wrong-password") {
+            //     alert("Incorrect password.");
+            // } 
+            // else if (error.code === "auth/user-not-found") {
+            //     alert("No user found with this email.");
+            // } 
             // else if (error.code === "auth/invalid-email") {
             //     alert("Invalid email format.");
             // } 
-            else {
-                PopUp.style.visibility = "visible"
-                // alert("Sign-in failed: " + error.message);
-            }
+            // else {
+            //     // PopUp.style.visibility = "visible"
+            //     alert("Sign-in failed: " + error.message);
+            // }
             console.error("Error signing in:", error.code);
+            // PopUp.style.visibility = "visible"
             
         });
         console.log(Myname , MyPassword);
